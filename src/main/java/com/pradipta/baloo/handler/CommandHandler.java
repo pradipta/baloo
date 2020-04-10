@@ -23,4 +23,19 @@ public class CommandHandler {
         service = textArray[0];
         return serviceHandler.checkWithParanms(service);
     }
+
+    public Instance processReserveRequest(HttpServletRequest request) throws Exception {
+        String username = request.getParameterMap().get("user_name") [0];
+        String channel = request.getParameterMap().get("channel_name")[0];
+        String service = null;
+        String instance = null;
+        String text = request.getParameterMap().get("text")[0];
+        String[] textArray = text.split(" ");
+        if (textArray.length<2) {
+            throw new Exception("Must pass service name and instance name");
+        }
+        service = textArray[0];
+        instance = textArray[1];
+        return serviceHandler.reserveParanms(service, instance, username);
+    }
 }

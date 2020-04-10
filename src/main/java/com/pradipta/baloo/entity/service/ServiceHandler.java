@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class ServiceHandler {
@@ -19,5 +20,14 @@ public class ServiceHandler {
         List<Instance> availableInstances = instanceService.getAllInstance();
         service.setInstances(availableInstances);
         return serviceService.addService(service);
+    }
+
+    public List<Instance> checkWithParanms(String service) {
+        return serviceService.findAllService()
+                .stream()
+                .filter(service1 -> service1.getName().equalsIgnoreCase(service))
+                .findFirst()
+                .map(service1 -> service1.getInstances())
+                .get();
     }
 }

@@ -1,0 +1,13 @@
+package com.pradipta.baloo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BalooApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BalooApplication.class, args);
+	}
+
+}

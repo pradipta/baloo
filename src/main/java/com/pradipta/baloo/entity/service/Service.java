@@ -1,5 +1,6 @@
 package com.pradipta.baloo.entity.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pradipta.baloo.entity.instance.Instance;
 import lombok.Data;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Integer id;
     private String name;
     @OneToMany

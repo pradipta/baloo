@@ -16,7 +16,12 @@ public class CommandController {
     private CommandHandler commandHandler;
 
     @RequestMapping(value = "/check", method = RequestMethod.POST)
-    public List<Instance> receiveCommand(HttpServletRequest request) throws Exception {
+    public List<Instance> receiveCheckCommand(HttpServletRequest request) throws Exception {
         return commandHandler.processCheckRequest(request);
+    }
+
+    @RequestMapping(value = "/reserve", method = RequestMethod.POST)
+    public Instance receiveReserveCommand(HttpServletRequest request) throws Exception {
+        return commandHandler.processReserveRequest(request);
     }
 }

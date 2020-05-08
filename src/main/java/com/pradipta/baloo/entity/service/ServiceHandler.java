@@ -23,7 +23,7 @@ public class ServiceHandler {
         return serviceService.addService(service);
     }
 
-    public List<Instance> checkWithParanms(String service) {
+    public List<Instance> checkWithParams(String service) {
         List<Service> services = serviceService.findAllService();
         return services
                 .stream()

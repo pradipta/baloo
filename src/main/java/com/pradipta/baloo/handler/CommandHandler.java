@@ -21,7 +21,7 @@ public class CommandHandler {
             throw new Exception("Must pass service name");
         }
         service = textArray[0];
-        return serviceHandler.checkWithParanms(service);
+        return serviceHandler.checkWithParams(service);
     }
 
     public Instance processReserveRequest(HttpServletRequest request) throws Exception {
